@@ -69,6 +69,7 @@ export function spawn(
     key,
     (): Promise<string> =>
       new Promise((resolve, reject) => {
+	opts.env.npm_package_noticeText = null;
         const proc = child.spawn(program, args, opts);
         spawnedProcesses[key] = proc;
 
